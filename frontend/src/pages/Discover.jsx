@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useMemo, useState } from "react"
 
 const restaurants = [
@@ -494,9 +495,12 @@ function Discover() {
                         </p>
                       </div>
 
-                      <button className="mt-6 w-full rounded-xl border border-white/10 py-3 text-sm font-semibold transition hover:border-orange-500 hover:bg-orange-500">
-                        View restaurant
-                      </button>
+                     <Link
+  to={`/restaurants/${restaurant.id}`}
+  className="mt-6 block w-full rounded-xl border border-white/10 py-3 text-center text-sm font-semibold transition hover:border-orange-500 hover:bg-orange-500"
+>
+  View restaurant
+</Link>
 
                     </div>
 
