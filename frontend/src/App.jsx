@@ -2,6 +2,8 @@ import Navbar from "./components/navbar/Navbar"
 import Hero from "./components/home/Hero"
 import Categories from "./components/home/Categories"
 import FeaturedRestaurants from "./components/home/FeaturedRestaurants"
+import Locations from "./components/home/Locations"
+
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
         <Hero />
         <Categories />
         <FeaturedRestaurants />
+        <Locations />
       </main>
     </div>
   )
