@@ -1,26 +1,54 @@
-import Navbar from "./components/navbar/Navbar"
-import Hero from "./components/home/Hero"
-import Categories from "./components/home/Categories"
-import FeaturedRestaurants from "./components/home/FeaturedRestaurants"
-import Locations from "./components/home/Locations"
-import WhyFoodie254 from "./components/home/WhyFoodie254"
-import Footer from "./components/footer/Footer"
+import { Routes, Route } from "react-router-dom"
+
+import MainLayout from "./layouts/MainLayout"
+
+import Home from "./pages/Home"
+import Discover from "./pages/Discover"
+import Restaurants from "./pages/Restaurants"
+import RestaurantDetails from "./pages/RestaurantDetails"
+import CategoriesPage from "./pages/CategoriesPage"
+import LocationsPage from "./pages/LocationsPage"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
+import Profile from "./pages/Profile"
+import Favorites from "./pages/Favorites"
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-white">
-      <Navbar />
+    <Routes>
+      <Route element={<MainLayout />}>
 
-      <main>
-        <Hero />
-        <Categories />
-        <FeaturedRestaurants />
-        <Locations />
-        <WhyFoodie254 />
-      </main>
+        <Route path="/" element={<Home />} />
 
-      <Footer />
-    </div>
+        <Route path="/discover" element={<Discover />} />
+
+        <Route path="/restaurants" element={<Restaurants />} />
+
+        <Route
+          path="/restaurants/:id"
+          element={<RestaurantDetails />}
+        />
+
+        <Route
+          path="/categories"
+          element={<CategoriesPage />}
+        />
+
+        <Route
+          path="/locations"
+          element={<LocationsPage />}
+        />
+
+        <Route path="/login" element={<Login />} />
+
+        <Route path="/register" element={<Register />} />
+
+        <Route path="/profile" element={<Profile />} />
+
+        <Route path="/favorites" element={<Favorites />} />
+
+      </Route>
+    </Routes>
   )
 }
 
